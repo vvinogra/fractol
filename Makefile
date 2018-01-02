@@ -6,7 +6,7 @@
 #    By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/25 16:41:32 by vvinogra          #+#    #+#              #
-#    Updated: 2017/12/31 15:42:36 by vvinogra         ###   ########.fr        #
+#    Updated: 2018/01/02 14:12:58 by vvinogra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 SRC = main.c solution_m.c image.c zoom_and_iter_move.c \
 	solution_j.c hook.c colors.c colors2.c solution_b.c solution_p.c \
-	solution_t.c solution_j_s.c
+	solution_t.c solution_j_s.c frac_comparing.c solution_my.c solution_c.c
 
 OBJ = $(SRC:.c=.o)
 

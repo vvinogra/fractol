@@ -6,7 +6,7 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 16:43:41 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/12/31 15:33:15 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/01/02 14:12:38 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,12 @@ void			solution_p(t_frac *frac);
 void			solution_t(t_frac *frac);
 void			ft_draw_t(t_frac *frac);
 
+void			solution_my(t_frac *frac);
+void			ft_draw_my(t_frac *frac);
+
+void			solution_c(t_frac *frac);
+void			ft_draw_c(t_frac *frac);
+
 void			zoom_and_iter_move(int keycode, t_frac *frac);
 
 int				key_func(int keycode, t_frac *frac);
@@ -94,5 +100,9 @@ void			color_6(t_frac *frac);
 void			color_7(t_frac *frac);
 void			color_8(t_frac *frac);
 void			color_9(t_frac *frac);
+
+void			choose_frac(t_frac *frac);
+void			comparing(char **argv, int i, t_frac *frac);
+void			comparing2(char **argv, int i, t_frac *frac);
 
 #endif

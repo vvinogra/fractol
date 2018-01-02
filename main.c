@@ -6,7 +6,7 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 16:41:46 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/12/31 18:46:02 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/01/02 14:13:23 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,6 @@ t_frac	*new_frac(void)
 	frac->win = mlx_new_window(frac->mlx, WIN_WIDTH, WIN_HEIGHT, "fractol");
 	frac->im = create_new_im(frac->mlx);
 	return (frac);
-}
-
-void	comparing(char **argv, int i, t_frac *frac)
-{
-	if (ft_strcmp(argv[i], "-m") == 0)
-	{
-		frac->nb = 1;
-		solution_m(frac);
-	}
-	if (ft_strcmp(argv[i], "-j") == 0)
-	{
-		frac->nb = 2;
-		solution_j(frac);
-	}
-	if (ft_strcmp(argv[i], "-b") == 0)
-	{
-		frac->nb = 3;
-		solution_b(frac);
-	}
-	if (ft_strcmp(argv[i], "-p") == 0)
-	{
-		frac->nb = 4;
-		solution_p(frac);
-	}
-	if (ft_strcmp(argv[i], "-t") == 0)
-	{
-		frac->nb = 5;
-		solution_t(frac);
-	}
 }
 
 void	helper_user(t_frac *frac)
@@ -89,20 +60,16 @@ int		main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		write(1, "Usage : ./fractol [-j, -m, -b, -p, -t, -j_s]\n", 45);
+		write(1, "Usage : ./fractol [-j, -m, -b, -p, -t, -j_s, -my, -c]\n", 54);
 		exit(0);
 	}
 	frac = new_frac();
-	if (ft_strcmp(argv[1], "-j_s") == 0)
-	{
-		frac->nb = 6;
-		solution_j(frac);
-	}
+	comparing2(argv, 1, frac);
 	comparing(argv, 1, frac);
 	if (frac->nb == 0)
 	{
 		mlx_destroy_window(frac->mlx, frac->win);
-		write(1, "Usage : ./fractol [-j, -m, -b, -p, -t, -j_s]\n", 45);
+		write(1, "Usage : ./fractol [-j, -m, -b, -p, -t, -j_s, -my, -c]\n", 54);
 		exit(0);
 	}
 	mlx_hook(frac->win, 17, 1L << 17, exit_x, frac);

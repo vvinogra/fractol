@@ -6,7 +6,7 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/30 21:21:22 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/12/31 15:35:13 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/01/02 13:31:30 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 int		mouse_func(int button, int x, int y, t_frac *frac)
 {
-	x = 0;
-	y = 0;
 	image_clear(frac->im);
 	if (button == 4)
+	{
 		frac->zoom *= 1.1;
+		frac->y_move += (y - WIN_HEIGHT / 2) * 0.001 / frac->zoom;
+		frac->x_move += (x - WIN_WIDTH / 2) * 0.001 / frac->zoom;
+	}
 	if (button == 5)
+	{
+		frac->y_move += (y - WIN_HEIGHT / 2) * 0.0001 / frac->zoom;
+		frac->x_move += (x - WIN_WIDTH / 2) * 0.0001 / frac->zoom;
 		frac->zoom /= 1.1;
-	if (frac->nb == 1)
-		ft_draw_man(frac);
-	if (frac->nb == 2)
-		ft_draw_jul(frac);
-	if (frac->nb == 3)
-		ft_draw_b(frac);
-	if (frac->nb == 4)
-		ft_draw_p(frac);
-	if (frac->nb == 5)
-		ft_draw_t(frac);
-	if (frac->nb == 6)
-		ft_draw_jul_s(frac);
+	}
+	choose_frac(frac);
 	mlx_put_image_to_window(frac->mlx, frac->win, frac->im->image, 0, 0);
 	return (0);
 }
@@ -88,18 +83,7 @@ int		key_func(int keycode, t_frac *frac)
 	image_clear(frac->im);
 	zoom_and_iter_move(keycode, frac);
 	color(keycode, frac);
-	if (frac->nb == 1)
-		ft_draw_man(frac);
-	if (frac->nb == 2)
-		ft_draw_jul(frac);
-	if (frac->nb == 3)
-		ft_draw_b(frac);
-	if (frac->nb == 4)
-		ft_draw_p(frac);
-	if (frac->nb == 5)
-		ft_draw_t(frac);
-	if (frac->nb == 6)
-		ft_draw_jul_s(frac);
+	choose_frac(frac);
 	mlx_put_image_to_window(frac->mlx, frac->win, frac->im->image, 0, 0);
 	return (0);
 }
