@@ -6,11 +6,12 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 16:41:46 by vvinogra          #+#    #+#             */
-/*   Updated: 2018/01/02 14:13:23 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:11:21 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+#include <stdio.h>
 
 t_frac	*new_frac(void)
 {

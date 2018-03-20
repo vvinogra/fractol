@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_push_back.c                                 :+:      :+:    :+:   */
+/*   del.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/21 17:17:55 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/12/29 17:11:07 by vvinogra         ###   ########.fr       */
+/*   Created: 2018/03/06 20:52:49 by vvinogra          #+#    #+#             */
+/*   Updated: 2018/03/15 14:08:40 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lst_push_back(t_list **start, t_list *new)
+void	del(void *content, size_t content_size)
 {
-	t_list		*lst;
-
-	lst = *start;
-	if (*start == 0)
-		*start = new;
-	else
-	{
-		while (lst->next)
-			lst = lst->next;
-		lst->next = new;
-	}
+	free(content);
+	content = 0;
+	content_size = 0;
 }

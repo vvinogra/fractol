@@ -6,7 +6,7 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 12:21:07 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/12/29 17:12:04 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:06:16 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <ctype.h>
-# define BUFF_SIZE 100
+# define BUFF_SIZE 10
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -91,7 +91,6 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f) (t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
-void			ft_lst_push_back(t_list **start, t_list *new);
 
 int				ft_isspace(int c);
 void			ft_swap(int *a, int *b);
@@ -110,5 +109,9 @@ typedef struct	s_file
 }				t_file;
 
 int				get_next_line(const int fd, char **line);
+void			ft_lstpushback(t_list **start, t_list *new);
+int				ft_lst_len_count(t_list *list);
+
+void			del(void *content, size_t content_size);
 
 #endif

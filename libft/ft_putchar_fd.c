@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvinogra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/01 16:46:38 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/11/01 16:46:38 by vvinogra         ###   ########.fr       */
+/*   Updated: 2017/12/24 18:09:45 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0 && fd > 2)
-		return ;
 	write(fd, &c, 1);
 }

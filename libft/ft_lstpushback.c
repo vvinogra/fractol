@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vvinogra <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/28 16:02:59 by vvinogra          #+#    #+#             */
-/*   Updated: 2017/10/28 16:02:59 by vvinogra         ###   ########.fr       */
+/*   Created: 2018/01/02 16:06:12 by vvinogra          #+#    #+#             */
+/*   Updated: 2018/01/02 16:06:31 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	ft_lstpushback(t_list **start, t_list *new)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	t_list		*lst;
 
-	i = 0;
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	while (str1[i] || str2[i])
+	lst = *start;
+	if (*start == 0)
+		*start = new;
+	else
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		while (lst->next)
+			lst = lst->next;
+		lst->next = new;
 	}
-	return (0);
 }

@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror -c
 
 HEADER = includes/
 
-SRC = 	ft_atoi.c \
+SRC =	ft_atoi.c \
 	ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
@@ -68,23 +68,28 @@ SRC = 	ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	get_next_line.c \
-	ft_lst_push_back.c
+	ft_lstpushback.c \
+	ft_lst_len_count.c \
+	del.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "libft.a file compiled"
 
-%.o: %.c
-	gcc $(FLAGS) -o $@ $< -I $(HEADER)
+%.o: %.c $(HEADER)/libft.h
+	@gcc $(FLAGS) -o $@ $< -I $(HEADER)
 
 clean:
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
+	@echo "Object files deleted: $(NAME)"
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
+	@echo "Executable file deleted: $(NAME)"
 
 re: fclean all

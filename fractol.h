@@ -6,14 +6,14 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 16:43:41 by vvinogra          #+#    #+#             */
-/*   Updated: 2018/01/02 14:12:38 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:11:18 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include "libft.h"
-# include <mlx.h>
+# include "mlx.h"
 # include <math.h>
 # define WIN_WIDTH 1000
 # define WIN_HEIGHT 1000
