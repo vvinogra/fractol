@@ -6,7 +6,7 @@
 /*   By: vvinogra <vvinogra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/30 21:21:22 by vvinogra          #+#    #+#             */
-/*   Updated: 2018/01/02 13:31:30 by vvinogra         ###   ########.fr       */
+/*   Updated: 2018/03/20 20:50:56 by vvinogra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int		mouse_func(int button, int x, int y, t_frac *frac)
 	if (button == 4)
 	{
 		frac->zoom *= 1.1;
-		frac->y_move += (y - WIN_HEIGHT / 2) * 0.001 / frac->zoom;
-		frac->x_move += (x - WIN_WIDTH / 2) * 0.001 / frac->zoom;
+		frac->y_move += (y - WIN_HEIGHT / 2) * 0.0005 / frac->zoom;
+		frac->x_move += (x - WIN_WIDTH / 2) * 0.0005 / frac->zoom;
 	}
 	if (button == 5)
 	{
-		frac->y_move += (y - WIN_HEIGHT / 2) * 0.0001 / frac->zoom;
-		frac->x_move += (x - WIN_WIDTH / 2) * 0.0001 / frac->zoom;
+		frac->y_move += (y - WIN_HEIGHT / 2) * 0.0005 / frac->zoom;
+		frac->x_move += (x - WIN_WIDTH / 2) * 0.0005 / frac->zoom;
 		frac->zoom /= 1.1;
 	}
 	choose_frac(frac);
